@@ -1,8 +1,9 @@
 name: InSpec Tests
 
 on:
+  push:
   schedule:
-    - cron:  '0 * * * *'
+    - cron: '0 * * * *'
 
 jobs:
   test:
