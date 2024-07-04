@@ -1,0 +1,22 @@
+name: DNS
+
+on:
+  push:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install InSpec
+      run: curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec -v 5.22.3
+
+    - name: Run tests
+      run: inspec exec tests/dns.rb
+      env:
+        CHEF_LICENSE: 'accept-silent'

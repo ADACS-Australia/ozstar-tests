@@ -1,4 +1,4 @@
-name: InSpec Tests
+name: Websites
 
 on:
   push:
@@ -17,6 +17,6 @@ jobs:
       run: curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P inspec -v 5.22.3
 
     - name: Run tests
-      run: inspec exec tests
+      run: inspec exec tests/websites.rb
       env:
         CHEF_LICENSE: 'accept-silent'
