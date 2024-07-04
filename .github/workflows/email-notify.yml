@@ -20,7 +20,7 @@ jobs:
         username: ${{ secrets.MAIL_USERNAME }}
         password: ${{ secrets.MAIL_PASSWORD }}
         subject: External test failed - ${{ github.event.workflow_run.name }}
-        to: ctchan@swin.edu.au
+        to: sc-admin@swin.edu.au
         from: ${{ secrets.MAIL_USERNAME }}
         body: |
           Test ${{ github.event.workflow_run.name }} failed.
